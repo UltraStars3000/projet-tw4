@@ -24,4 +24,19 @@ $(function () {
             $(".leaflet-routing-container").get(0).style.visibility = "hidden";
         }
     });
+    $('#expand').click(function () {
+        $('#map').requestFullscreen();
+        //compress icon
+    });
+
+
+    function subs(src, sub) {
+        var index = src.indexOf(sub);
+        if (index !== -1) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 });
