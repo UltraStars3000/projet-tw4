@@ -1,6 +1,6 @@
 <?php
     include "connexion.php";
-    //requete pour recuperer les data des monuments stockés dans la BDD msql
+    //requête pour récuperer les data des monuments stockés dans la BDD msql
     $reponse =  $bdd->query('SELECT * FROM lieux');
 
     //on stocke les données des monuments dans des tableaux
@@ -12,17 +12,12 @@
         $tab_nom[$donnees['id_lieux']] = $donnees['nom'];
     }
 
-    //pour chaque monuments, on crée une chaine de carateres avec toutes les données séparées d'un ;
+    //pour chaque monument, on crée une chaine de caractères avec toutes les données séparées d'un ;
     //chaque monument est séparé d'un |
-    //dans le fichier script.js on vient faire une requete ajax en GET pour recuperer ces données
+    //dans le fichier script.js on vient faire une requête ajax en GET pour récuperer ces données
     foreach($tab_nom as $id_monu => $nom){
-        //construction d'une chaine de caractere
+        //construction d'une chaine de caractères
         echo $nom.";".$tab_long[$id_monu].";".$tab_lat[$id_monu].";".$tab_addresse[$id_monu].";".$tab_categorie[$id_monu]."|";
         
     }
-
-    
-    
-    
-
-    ?>
+?>
