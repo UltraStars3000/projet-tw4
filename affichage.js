@@ -1,5 +1,5 @@
 $(function () {
-    // activation des boutons
+    // affichage des lieux ou non
     $('.btn').click(function () {
         $(this).toggleClass('active');
         if ($(this).attr('id') == "monument") {
@@ -16,6 +16,7 @@ $(function () {
         }
     });
 
+    // affichage du menu itinéraire
     $('#close').click(function () {
         if ($(".leaflet-routing-container").get(0).style.visibility == "hidden") {
             $(".leaflet-routing-container").get(0).style.visibility = "visible";
@@ -24,12 +25,14 @@ $(function () {
             $(".leaflet-routing-container").get(0).style.visibility = "hidden";
         }
     });
+    
+    // mode plein écran
     $('#expand').click(function () {
         $('#map').requestFullscreen();
         //compress icon
     });
 
-
+    // fonction de découpage de chaîne de caractères
     function subs(src, sub) {
         var index = src.indexOf(sub);
         if (index !== -1) {
