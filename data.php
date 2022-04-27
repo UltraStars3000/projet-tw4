@@ -10,6 +10,7 @@
         $tab_long[$donnees['id_lieux']] = $donnees['longitude'];
         $tab_lat[$donnees['id_lieux']] = $donnees['latitude'];
         $tab_nom[$donnees['id_lieux']] = $donnees['nom'];
+        $tab_note[$donnees['id_lieux']] = $donnees['note'];
     }
 
     //pour chaque monument, on crée une chaine de caractères avec toutes les données séparées d'un ;
@@ -17,7 +18,7 @@
     //dans le fichier script.js on vient faire une requête ajax en GET pour récuperer ces données
     foreach($tab_nom as $id_monu => $nom){
         //construction d'une chaine de caractères
-        echo $nom.";".$tab_long[$id_monu].";".$tab_lat[$id_monu].";".$tab_addresse[$id_monu].";".$tab_categorie[$id_monu]."|";
+        echo $nom.";".$tab_long[$id_monu].";".$tab_lat[$id_monu].";".$tab_addresse[$id_monu].";".$tab_categorie[$id_monu].";".$tab_note[$id_monu]."|";
         
     }
 ?>

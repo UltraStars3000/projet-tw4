@@ -1,22 +1,5 @@
 $(function () {
     // activation des boutons
-    /*
-    $('.btn').click(function () {
-        $(this).toggleClass('active');
-        if ($(this).attr('id') == "monument") {
-            if (subs(($('.leaflet-marker-icon')).attr('src'), "monument")) {
-                $(this).each(function () {
-                    if (typeof $(this).attr('hidden') !== 'undefined') {
-                        $(this).removeAttr('hidden');
-                    }
-                    else {
-                        $(this).attr('hidden', 'hidden');
-                    }
-                });
-            }
-        }
-    });
-    */
     //gestions de tout les bouttons un par uns car sinon ca bug sur tel
     var bool1 = true;
     $("#monument").click(function(e){

@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
         crossorigin="" />
@@ -16,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
     <script src="affichage.js"></script>
+    <link rel="stylesheet" href="style.css" />
     
     <style type="text/css">
         #map {
@@ -33,6 +35,7 @@
 <body>
     <span hidden id="idUser"></span>
     <span hidden id="idDestMsg"></span>
+    <span hidden id="lieuClique"></span>
 
     <div class="ui raised very padded text container segment" id="cont">
         <div class="ui segment">
@@ -59,7 +62,13 @@
                     </button>
         </div>
 
+
+
+        
+
     </div>
+
+    
 
    
     
@@ -73,6 +82,7 @@
     <script type="text/javascript">
         var latU;
         var longU;
+        var listeMarker = new Array();
 
         function setID(map) {
             var cpt = 1;
@@ -174,25 +184,103 @@
                     var longM = tabDataMonument[i][1];
                     var latM = tabDataMonument[i][2];
                     var marker = L.marker([latM, longM], { icon: myIcon }).addTo(macarte);
-                    marker.bindPopup(tabDataMonument[i][0]);
+                    listeMarker.push(marker);
+                    //mise en place des étoiles/notes
+                    switch (tabDataMonument[i][5]){
+                        case "1":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i>    <b>1</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "2":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i>    <b>2</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "3":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>     <b>3</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "4":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>4</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "5":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>5</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        default:
+                            marker.bindPopup(tabDataMonument[i][0]);
+                    }
+                    
                 }
                 if((tabDataMonument[i][4]) == "Parcs et jardins"){
                     var longM = tabDataMonument[i][1];
                     var latM = tabDataMonument[i][2];
                     var marker = L.marker([latM, longM], { icon: myIconJ }).addTo(macarte);
-                    marker.bindPopup(tabDataMonument[i][0]);
+                    listeMarker.push(marker);
+                    switch (tabDataMonument[i][5]){
+                        case "1":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i>    <b>1</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "2":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i>    <b>2</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "3":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>     <b>3</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "4":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>4</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "5":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>5</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        default:
+                            marker.bindPopup(tabDataMonument[i][0]);
+                    }
                 }
                 if((tabDataMonument[i][4]) == "Mediatheques et Bibliotheques"){
                     var longM = tabDataMonument[i][1];
                     var latM = tabDataMonument[i][2];
                     var marker = L.marker([latM, longM], { icon: myIconBiblio }).addTo(macarte);
-                    marker.bindPopup(tabDataMonument[i][0]);
+                    listeMarker.push(marker);
+                    switch (tabDataMonument[i][5]){
+                        case "1":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i>    <b>1</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "2":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i>    <b>2</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "3":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>     <b>3</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "4":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>4</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "5":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>5</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        default:
+                            marker.bindPopup(tabDataMonument[i][0]);
+                    }
                 }
                 if((tabDataMonument[i][4]) == "Espaces culturel"){
                     var longM = tabDataMonument[i][1];
                     var latM = tabDataMonument[i][2];
                     var marker = L.marker([latM, longM], { icon: myIconCulture }).addTo(macarte);
-                    marker.bindPopup(tabDataMonument[i][0]);
+                    listeMarker.push(marker);
+                    switch (tabDataMonument[i][5]){
+                        case "1":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i>    <b>1</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "2":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i>    <b>2</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "3":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>     <b>3</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "4":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>4</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        case "5":
+                            marker.bindPopup(tabDataMonument[i][0]+"<br><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i><i class='star icon'></i>    <b>5</b>/5 <br> <a class='voirAvis' href='#'>Voir les avis</a><br><a class='noterLieu' href='#'>Noter l'établissement</a>");
+                            break;
+                        default:
+                            marker.bindPopup(tabDataMonument[i][0]);
+                    }
                 }
 
 
@@ -444,7 +532,123 @@
     
   </div>
 
+
+
+  <!--partie pour la notation / commentaire-->
+  <div class="ui modal notation">
+    <i class="close icon"></i>
+    <span id="nomLieuNote" hidden></span>
+    <div class="ui visible message massive">
+        <span id="noteF" hidden>0</span>
+        <p>Attribuer Une Note</p>
+        <i id="star1" class="star icon"></i><i id="star2" class="star icon"></i><i id="star3" class="star icon"></i><i id="star4" class="star icon"></i><i id="star5" class="star icon"></i>
+        <br><br>
+        <div class="ui form">
+            <div class="field">
+              <label>Laisser un commentaire (facultatif)</label>
+              <textarea id="contenuCommentaire" rows="2"></textarea>
+            </div>
+          </div> 
+    </div>
+
+    
+    <div class="actions">
+        <div class="ui positive right labeled icon button" id="envoyerNote">
+          Envoyer
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+  </div>
+
+
+
+  <div class="ui modal com">
+    <i class="close icon"></i>
+    <div class="header">
+      Listes des avis
+    </div>
+      
+    
+  </div>
+
+
+  <div class="ui modal listeLieux">
+    <i class="close icon"></i>
+    <div class="header">
+      Creer son circuit
+    </div>
+
+
+
+    <div class="ui placeholder segment">
+        <div class="ui two column very relaxed stackable grid">
+          <div class="column">
+            <div class="ui vertical menu">
+                <div class="ui left pointing dropdown link item">
+                    <i class="dropdown icon"></i>
+                    Monuments
+                    <div id ="menuMonuments" class="menu">
+                    </div>
+                  </div>
+                <div class="ui left pointing dropdown link item">
+                  <i class="dropdown icon"></i>
+                  Parcs et Jardins
+                  <div id ="menuParcs" class="menu">
+                  </div>
+                </div>
+                <div class="ui left pointing dropdown link item">
+                    <i class="dropdown icon"></i>
+                    Bibliothèques
+                    <div id ="menuBiblio" class="menu">
+                    </div>
+                  </div>
+                  <div class="ui left pointing dropdown link item">
+                    <i class="dropdown icon"></i>
+                    Escpaces Culturels
+                    <div id ="menuCulture" class="menu">
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="middle aligned column">
+            <div class="ui search">
+                <div class="ui icon input">
+                  <input id="inputQuery" class="prompt" type="text" placeholder="Rechercher un Lieu">
+                  <i class="search icon"></i>
+                </div>
+                <div id ="resSearch">
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="ui vertical divider">
+          Or
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="ui list res">        
+        </div>
+    </div>
+
+    <div class="actions">
+        <div class="ui black deny button" id="annulerCircuit">
+          Annuler
+        </div>
+        <div class="ui positive right labeled icon button" id="validerCircuit">
+          Valider
+          <i class="checkmark icon"></i>
+        </div>
+      </div> 
+    
+  </div>
+
+
+
 </body>
+
+
+
 
 
 
