@@ -18,22 +18,22 @@
 <body class="img js-fullheight">
 	<div class="ui large top fixed hidden menu transparent">
 		<div class="ui container">
-			<a href="../index.html" class="active item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
-			<a href="#" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+			<a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
+			<a href="graphs/graphs.php" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
 		</div>
 	</div>
 	<!--Sidebar Menu-->
 	<div class="ui vertical inverted sidebar menu">
-		<a href="../index.html" class="active item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
-		<a href="#" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+		<a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
+		<a href="graphs/graphs.php" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
 	</div>
 	<!--Page Contents-->
 	<div class="pusher">
 		<div class="ui inverted vertical masthead center aligned segment img js-fullheight" style="background-image: url('./images/bg-blur.jpg')">
 			<div class="ui container">
 				<div class="ui large secondary inverted  menu">
-					<a href="../index.html" class="active item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
-					<a href="#" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+				<a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
+				<a href="graphs/graphs.php" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
 				</div>
 			</div>
 			<section class="ftco-section">

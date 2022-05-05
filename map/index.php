@@ -40,30 +40,40 @@
         <span hidden id="idDestMsg"></span>
         <span hidden id="lieuClique"></span>
 
-        <div class="ui raised very padded text container segment" id="cont">
-            <div class="ui segment">
-                <h2 class="ui left floated header">Carte de la ville</h2>
-                <div class="ui clearing divider"></div>
-                <div class="ui segment" id="map">
-                    <!-- Ici s'affichera la carte -->
-                </div>
-                <button class="ui icon right floated button" id="expand">
-                    <i class="expand icon"></i>
-                    <button class="ui icon right floated button" id="close">
-                        <i class="map icon"></i>
-                        <button class="ui toggle labeled icon active button btn" id="monument">
-                            <i class="building icon"></i> Monuments
-                        </button>
-                        <button class="ui toggle labeled icon active button btn" id="parc">
-                            <i class="tree icon"></i> Parcs et Jardins
-                        </button>
-                        <button class="ui toggle labeled icon active button btn" id="biblio">
-                            <i class="book icon"></i> Bibliothèques
-                        </button>
-                        <button class="ui toggle labeled icon active button btn" id="culture">
-                            <i class="ticket icon"></i> Espaces Culturels
-                        </button>
+        <div class="ui large top hidden menu transparent">
+            <div class="ui container">
+                <a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
+                <a href="../graphs/graphs.php" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
             </div>
+        </div>
+        <!--Sidebar Menu-->
+        <div class="ui vertical inverted sidebar menu">
+            <a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
+            <a href="../graphs/graphs.php" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+        </div>
+
+        <div class="ui raised very padded text container segment" id="cont">
+            <h2 class="ui left floated header">Carte de la ville</h2>
+            <div class="ui clearing divider"></div>
+            <div class="ui segment" id="map">
+                <!-- Ici s'affichera la carte -->
+            </div>
+            <button class="ui icon right floated button" id="expand">
+                <i class="expand icon"></i>
+                <button class="ui icon right floated button" id="close">
+                    <i class="map icon"></i>
+                    <button class="ui toggle labeled icon active button btn" id="monument">
+                        <i class="building icon"></i> Monuments
+                    </button>
+                    <button class="ui toggle labeled icon active button btn" id="parc">
+                        <i class="tree icon"></i> Parcs et Jardins
+                    </button>
+                    <button class="ui toggle labeled icon active button btn" id="biblio">
+                        <i class="book icon"></i> Bibliothèques
+                    </button>
+                    <button class="ui toggle labeled icon active button btn" id="culture">
+                        <i class="ticket icon"></i> Espaces Culturels
+                    </button>
         </div>
 
         <!-- Fichiers Javascript -->
@@ -509,12 +519,12 @@
         <div class="ui modal test">
             <i class="close icon"></i>
             <div class="header">
-                Envoyer un Message
+                Envoyer un message
             </div>
 
             <div class="ui form">
                 <div class="field">
-                    <label>Short Text</label>
+                    <label>Short text</label>
                     <textarea id="contenuMsg" rows="2"></textarea>
                 </div>
             </div>
@@ -535,7 +545,7 @@
         <div class="ui modal receive">
             <i class="close icon"></i>
             <div class="header" id="mettrePseudo">
-                Vous avez un Message de
+                Vous avez un message de
             </div>
 
             <div class="ui form">
@@ -554,7 +564,7 @@
             <span id="nomLieuNote" hidden></span>
             <div class="ui visible message massive">
                 <span id="noteF" hidden>0</span>
-                <p>Attribuer Une Note</p>
+                <p>Attribuer une note</p>
                 <i id="star1" class="star icon"></i><i id="star2" class="star icon"></i><i id="star3" class="star icon"></i><i id="star4" class="star icon"></i><i id="star5" class="star icon"></i>
                 <br><br>
                 <div class="ui form">
@@ -589,7 +599,7 @@
         <div class="ui modal listeLieux">
             <i class="close icon"></i>
             <div class="header">
-                Creer son circuit
+                Créer son circuit
             </div>
 
 
@@ -618,7 +628,7 @@
                             </div>
                             <div class="ui left pointing dropdown link item">
                                 <i class="dropdown icon"></i>
-                                Escpaces Culturels
+                                Espaces Culturels
                                 <div id="menuCulture" class="menu">
                                 </div>
                             </div>
