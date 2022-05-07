@@ -15,27 +15,28 @@
 </head>
 <?php
 include "../login-form-20/connexion.php";
+
 ?>
 
 <body id="root">
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
-            <a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
-            <a href="#" class="active item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+            <a href="../index.php" class="item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
+            <a href="#" class="active item">Statistiques</a> <a href="../index.php#contactForm" class="item">Nous contacter</a>
         </div>
     </div>
     <!--Sidebar Menu-->
     <div class="ui vertical inverted sidebar menu">
-        <a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
-        <a href="#" class="active item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+        <a href="../index.php" class="item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
+        <a href="#" class="active item">Statistiques</a> <a href="../index.php#contactForm" class="item">Nous contacter</a>
     </div>
     <!--Page Contents-->
     <div class="pusher">
         <div class="ui inverted vertical masthead center aligned segment" style="background-image: url('../login-form-20/images/bg-blur.jpg')">
             <div class="ui container">
                 <div class="ui large secondary inverted  menu">
-                    <a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
-                    <a href="#" class="active item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+                    <a href="../index.php" class="item">Accueil</a> <a href="../map/index.php" class="item">Carte</a>
+                    <a href="#" class="active item">Statistiques</a> <a href="../index.php#contactForm" class="item">Nous contacter</a>
                 </div>
             </div>
             <div class="ui text container">
@@ -71,7 +72,10 @@ include "../login-form-20/connexion.php";
             </div>
 
             <div class="ui raised very padded container segment">
-                <canvas id="barChart"></canvas>
+                <canvas id="voteChart"></canvas>
+            </div>
+            <div class="ui raised very padded container segment">
+                <canvas id="noteChart"></canvas>
             </div>
         </div>
 

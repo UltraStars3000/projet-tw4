@@ -42,14 +42,14 @@
 
         <div class="ui large top hidden menu transparent">
             <div class="ui container">
-                <a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
-                <a href="../graphs/graphs.php" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+                <a href="../index.php" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
+                <a href="../graphs/graphs.php" class="item">Statistiques</a> <a href="../index.php#contactForm" class="item">Nous contacter</a>
             </div>
         </div>
         <!--Sidebar Menu-->
         <div class="ui vertical inverted sidebar menu">
-            <a href="../index.html" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
-            <a href="../graphs/graphs.php" class="item">Statistiques</a> <a href="#contactForm" class="item">Nous contacter</a>
+            <a href="../index.php" class="item">Accueil</a> <a href="../map/index.php" class="active item">Carte</a>
+            <a href="../graphs/graphs.php" class="item">Statistiques</a> <a href="../index.php#contactForm" class="item">Nous contacter</a>
         </div>
 
         <div class="ui raised very padded text container segment" id="cont">
