@@ -91,7 +91,7 @@
               <div class="field">
                 <div class="ui checkbox">
                   <input type="checkbox" tabindex="0" required>
-                  <label>j'accepte les termes et conditions générales</label>
+                  <label>J'accepte les termes et conditions générales</label>
                 </div>
               </div>
 
@@ -107,16 +107,19 @@
       <div class="ui container">
         <div class="ui stackable inverted divided equal height stackable grid">
           <div class="three wide column">
-            <h4 class="ui inverted header">A Propos</h4>
+            <h4 class="ui inverted header">À Propos</h4>
             <div class="ui inverted link list">
               <a class="item" href="https://github.com/UltraStars3000/projet-tw4">Github</a>
-              <a class="item" href="#root">Contactez-nous</a>
+              <a class="item" href="#contactForm">Contactez-nous</a>
             </div>
           </div>
           <div class="seven wide column">
-            <h4 class="ui inverted header">bla bla bla</h4>
+            <h4 class="ui inverted header">Réalisation</h4>
             <p>
-              mettre un truc intéressant ici
+              Données obtenues grâce à l'open-data mise à disposition par la ville d'Albi.
+            </p>
+            <p>
+              Mise en place de la carte effectué avec OpenStreetMap.
             </p>
           </div>
         </div>

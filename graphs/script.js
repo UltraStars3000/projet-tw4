@@ -17,11 +17,11 @@ window.onload = function () {
             //On crée le graphique
             var ctxB = document.getElementById("voteChart").getContext('2d');
             var voteChart = new Chart(ctxB, {
-                type: 'bar',
+                type: 'horizontalBar',
                 data: {
                     labels: tab[0],
                     datasets: [{
-                        label: 'Lieux les plus votés',
+                        label: '# de votes',
                         data: tab[1],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -43,9 +43,14 @@ window.onload = function () {
                 options: {
                     responsive: true,
                     scales: {
-                        yAxes: [{
+                        xAxes: [{
                             ticks: {
                                 beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                mirror: true
                             }
                         }]
                     }
@@ -74,11 +79,11 @@ window.onload = function () {
             //On crée le graphique
             var ctxB_note = document.getElementById("noteChart").getContext('2d');
             var noteChart = new Chart(ctxB_note, {
-                type: 'bar',
+                type: 'horizontalBar',
                 data: {
                     labels: tab_note[0],
                     datasets: [{
-                        label: 'Lieux les mieux votés',
+                        label: 'Note moyenne',
                         data: tab_note[1],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -100,7 +105,7 @@ window.onload = function () {
                 options: {
                     responsive: true,
                     scales: {
-                        yAxes: [{
+                        xAxes: [{
                             ticks: {
                                 beginAtZero: true
                             }

@@ -71,10 +71,12 @@ include "../login-form-20/connexion.php";
                 </div>
             </div>
 
-            <div class="ui raised very padded container segment">
+            <div class="ui raised center aligned container segment">
+                <h2>Lieux les plus notés</h2>
                 <canvas id="voteChart"></canvas>
             </div>
-            <div class="ui raised very padded container segment">
+            <div class="ui raised center aligned container segment">
+                <h2>Lieux les mieux notés</h2>
                 <canvas id="noteChart"></canvas>
             </div>
         </div>
@@ -90,13 +92,16 @@ include "../login-form-20/connexion.php";
                         <h4 class="ui inverted header">À propos</h4>
                         <div class="ui inverted link list">
                             <a class="item" href="https://github.com/UltraStars3000/projet-tw4">GitHub</a>
-                            <a class="item" href="#root">Contactez-nous</a>
+                            <a class="item" href="../index.php#contactForm">Contactez-nous</a>
                         </div>
                     </div>
                     <div class="seven wide column">
-                        <h4 class="ui inverted header">bla bla bla</h4>
+                        <h4 class="ui inverted header">Réalisation</h4>
                         <p>
-                            mettre un truc intéressant ici
+                            Données obtenues grâce à l'open-data mise à disposition par la ville d'Albi.
+                        </p>
+                        <p>
+                            Mise en place de la carte effectué avec OpenStreetMap.
                         </p>
                     </div>
                 </div>
