@@ -47,11 +47,6 @@ window.onload = function () {
                             ticks: {
                                 beginAtZero: true
                             }
-                        }],
-                        yAxes: [{
-                            ticks: {
-                                mirror: true
-                            }
                         }]
                     }
                 }
